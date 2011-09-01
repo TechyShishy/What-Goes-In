@@ -101,10 +101,13 @@ class FunctionInstance {
     }
     public function do_print()
     {
-        $html = '<h>'.$this->get_name().'</h> '.$this->get_call_event()->get_include_file().'<br />';
+        $html  = '<h class="function-name">'.$this->get_name().'</h>';
+        $include_file = $this->get_call_event()->get_include_file();
+        if(!empty($include_file))
+            $html .= '<span class="function-include-file">'.$include_file.'</span>';
         foreach($this->get_params() as $param)
         {
-            $html .= '<span>'.htmlspecialchars($param).'</span><br />';
+            $html .= '<span class="function-params">'.htmlspecialchars($param).'</span>';
         }
         $html .= '<ol>';
 
