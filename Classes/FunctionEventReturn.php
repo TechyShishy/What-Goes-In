@@ -5,6 +5,8 @@
  * and open the template in the editor.
  */
 
+include_once('Classes/FunctionEvent.php');
+
 /**
  * Description of FunctionEventReturn
  *

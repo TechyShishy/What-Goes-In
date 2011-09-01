@@ -40,6 +40,22 @@ class FunctionEvent
 	{
 		$this->memory = $memory;
 	}
+    public function get_level()
+    {
+        return $this-level;
+    }
+    public function get_function_number()
+    {
+        return $this-function_number;
+    }
+    public function get_time()
+    {
+        return $this-time;
+    }
+    public function get_memory()
+    {
+        return $this-memory;
+    }
 
 }
 

@@ -5,6 +5,8 @@
  * and open the template in the editor.
  */
 
+include_once('Classes/FunctionInstance.php');
+
 /**
  * Description of FunctionMain
  *
@@ -16,10 +18,9 @@ class FunctionMain extends FunctionInstance
 		
 	}
 	
-	
-	// Forcibly break inheritance here
 	// This is the root node, so there can't be a parent.
-	private function get_parent() {
+	public function get_parent() {
+        return null;
 	}
 	public function do_return($return_event) {
 		$this->set_return_event($return_event);
