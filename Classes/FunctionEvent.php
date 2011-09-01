@@ -10,26 +10,36 @@
  *
  * @author shishire
  */
-class TraceFileLineBase
+class FunctionEvent
 {
-
     private $level;
     private $function_number;
     private $time;
     private $memory;
-
-    public static function new_line($line) {
-        //Slightly hacky way to get it to recognize the difference between entry and exit lines.
-        $temp = explode("\t", $line);
-        if($temp[3] == 0)
-        {
-            return new TraceFileLineEntry($line);
-        }
-        else
-        {
-            return new TraceFileLineExit($line);
-        }
-    }
+	
+	public function __construct($parsed_line) {
+		$this->set_level($parsed_line['level']);
+		$this->set_function_number($parsed_line['function_number']);
+		$this->set_time($parsed_line['time']);
+		$this->set_memory($parsed_line['memory']);
+	}
+	
+	protected function set_level($level)
+	{
+		$this->level = $level;
+	}
+	protected function set_function_number($function_number)
+	{
+		$this->function_number = $function_number;
+	}
+	protected function set_time($time)
+	{
+		$this->time = $time;
+	}
+	protected function set_memory($memory)
+	{
+		$this->memory = $memory;
+	}
 
 }
 

@@ -10,9 +10,11 @@
  *
  * @author shishire
  */
-class TraceFileLineExit extends TraceFileLineBase
+class FunctionEventReturn extends FunctionEvent
 {
-    //put your code here
+    public function __construct($parsed_line) {
+		parent::__construct($parsed_line);
+	}
 }
 
 ?>
