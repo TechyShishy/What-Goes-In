@@ -6,7 +6,7 @@
  */
 
 /**
- * Description of TraceFileLine
+ * Description of FunctionEvent
  *
  * @author shishire
  */
