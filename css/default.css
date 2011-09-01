@@ -1,0 +1,45 @@
+/* 
+    Document   : default.css
+    Created on : Sep 1, 2011, 3:20:38 PM
+    Author     : shishire
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#function-tree {
+    background-color: #F0F0FC;
+    border-radius: 0.5em;
+}
+#function-tree ol
+{
+    list-style-type: disc;
+}
+
+#function-tree li > h, #function-tree li > span
+{
+    border-radius: 0.5em;
+    padding: 0.25em;
+    display: inline-block;
+    margin: 0.25em;
+}
+
+#function-tree .function-name
+{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+#function-tree .function-include-file
+{
+    background-color: #800000;
+    color: #FFFFFF;
+}
+#function-tree .function-params
+{
+    background-color: #0000B0;
+    color: #FFFFFF;
+}
