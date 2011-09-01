@@ -67,6 +67,10 @@ class TraceFile
 			{
 				$current_function = $current_function->do_return(new FunctionEventReturn($parsed_line));
 			}
+            
+            // Currently doesn't handle Uncaught Exceptions or Errors.
+            if($current_function === null)
+                break;
         }
     }
 	public static function read_line($line)
