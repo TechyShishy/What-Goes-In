@@ -9,7 +9,25 @@
     <body>
         <form action="" method="GET">
             <label for="file">File:</label>
-            <input id="file" name="file" type="text" />
+            <select id="file" name="file">
+<?php
+
+	echo '<option value="" selected="selected"> -- Select -- </option>';
+
+	$files = new DirectoryIterator ( ini_get('xdebug.trace_output_dir') );
+	foreach ( $files as $file ) {
+
+		if (substr_count ( $file->getFilename (), '.xt' ) == 0 || in_array($config['directory'] . '/' . $file->getFilename(), $ownTraces)) {
+			continue;
+		}
+
+		$date = explode ( '.', $file->getFilename () );
+		$date = date ( 'Y-m-d H:i:s', $date [0] );
+
+		echo '<option value="' . $file->getFilename () . '"> ' . $date . ' - ' . $file->getFilename () . ' </option>';
+	}
+?>
+            </select>
             <input type="submit" />
         </form>
 <?php
@@ -21,7 +39,7 @@ if(isset($_GET['file']))
                 <li>
 <?php
     include_once('Classes/TraceFile.php');
-    $file = new TraceFile($_GET['file']);
+    $file = new TraceFile(realpath(ini_get('xdebug.trace_output_dir').$_GET['file']));
     $main = $file->get_main();
     echo $main->do_print();
 ?>
