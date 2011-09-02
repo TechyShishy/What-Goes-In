@@ -17,7 +17,7 @@
 	$files = new DirectoryIterator ( ini_get('xdebug.trace_output_dir') );
 	foreach ( $files as $file ) {
 
-		if (substr_count ( $file->getFilename (), '.xt' ) == 0 || in_array(ini_get('xdebug.trace_output_dir') . '/' . $file->getFilename(), $ownTraces)) {
+		if (substr_count ( $file->getFilename (), '.xt' ) == 0) {
 			continue;
 		}
 
